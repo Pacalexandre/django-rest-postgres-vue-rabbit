@@ -14,6 +14,7 @@ para o uso é necessário:
 
 ## Get Started
 ...
+```<script src="https://unpkg.com/vue@3"></script>```
 
 ## Roteiro de implementação 
 

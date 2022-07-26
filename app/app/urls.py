@@ -19,5 +19,6 @@ from core.urls import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('web.urls')),
 ]
 urlpatterns += router.urls

@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+APPEND_SLASH=False
+
 
 # Application definition
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'core',
+    'web',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +82,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# não se deve utilizar variaveis HARDCODE na configurção utilize veriaies de ambiente
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -90,9 +94,16 @@ DATABASES = {
     }
 }
 
+#configuração para teste nessa aplicação
 REST_FRAMEWORK = {
+    #alterar essa configuração qnd for em produção
+    # 'DEFAULT_AUTHENTICATION_CLASSES': [
+    #     #'rest_framework.authentication.BasicAuthentication',
+    #     #'rest_framework.authentication.SessionAuthentication',
+    #     'rest_framework.permissions.AllowAny',
+    # ],
     'DEFAULT_RENDERER_CLASSES': [
-        'rest_framework.renderers.JSONRenderer'
+        'rest_framework.renderers.JSONRenderer',
     ]
 }
 
